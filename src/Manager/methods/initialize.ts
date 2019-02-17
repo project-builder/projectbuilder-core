@@ -23,10 +23,13 @@ const initialize = async function(port: number) {
 
   this.dispatcher = new this.Dispatcher(this.modelMap, this.databaseMap, this.fileSystemsMap, this.orm, this.fs, this.validator)
 
-  this.manage();
-
   this.app.use(this.multer().any());
   this.app.use(this.express.static("public/dist"));
+
+  this.manage();
+
+
+
 
   this.app.listen(listenPort, () => {
     console.log(`Listening on port ${listenPort}`);
