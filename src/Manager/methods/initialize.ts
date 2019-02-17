@@ -19,36 +19,15 @@ const initialize = async function(port: number) {
 
 
 for (let [key, value] of this.modelMap) {
-    // console.log(value);
-    console.log(this.project.models[key]);
-    console.log('@@@@@@@@@@@@@@@@@@@@@@');
-
-
   let currentModelMap = this.modelMap.get(key)
   let currentModelDB = currentModelMap.get('db');
-  let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
-  let currentModelData = currentModelMap.get('data')
-  // let currentModel = this.dispatcherHelper(key)
+  // let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
 
   if (currentModelDB) {
     let configFile = this.databaseMap.get(currentModelDB).get('setup')
     let orm = new this.orm[currentModelDB](configFile)
-
-console.log('$$$$$$$$$$$$$$$$$$$$$$$');
-    console.log(orm);
-    console.log('$$$$$$$$$$$$$$$$$$$$$$$');
-
-    let myresp = await orm.create(key, this.project.models[key])
-
-    console.log('myresp', myresp);
-
-    // return myresp
-
+    await orm.create(key, this.project.models[key])
   }
-
-
-
-
 }
 
 
