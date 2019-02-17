@@ -33,41 +33,13 @@ console.log('$$$$$$$$$$$$$$$$$$$$$$$');
     console.log(orm);
     console.log('$$$$$$$$$$$$$$$$$$$$$$$');
 
-    // let myresp = await orm.getAll(model, searchCategory, searchValue)
+    let myresp = await orm.create(key, currentModelData)
+
+    console.log('myresp', myresp);
 
     // return myresp
+
   }
-
-  // let currentModelMap = this.modelMap.get(model)
-  // let currentModelDB = currentModelMap.get('db');
-  // let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
-  // let currentModelData = currentModelMap.get('data')
-
-
-  // let currentModel = {
-  //   // map: currentModelMap,
-  //   db: currentModelDB,
-  //   files: currentModelFiles,
-  //   data: currentModelData
-  //   // dbType: currentModelDBType
-  // }
-
-
-  // return currentModel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
