@@ -19,7 +19,8 @@ const initialize = async function(port: number) {
 
 
 for (let [key, value] of this.modelMap) {
-    console.log(value);
+    // console.log(value);
+    console.log(this.project.models[key]);
     console.log('@@@@@@@@@@@@@@@@@@@@@@');
 
 
