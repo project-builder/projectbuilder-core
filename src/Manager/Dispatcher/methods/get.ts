@@ -21,15 +21,15 @@ let searchValue = [];
   if (currentModel.db) {
     let configFile = this.databaseMap.get(currentModel.db).get('setup')
 
-console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-    console.log(configFile)
-
-console.log('***********************')
-console.log(this.orm)
-
-console.log('***********************')
-console.log(currentModel.db)
-console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+// console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+//     console.log(configFile)
+//
+// console.log('***********************')
+// console.log(this.orm)
+//
+// console.log('***********************')
+// console.log(currentModel.db)
+// console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^')
 
 
 

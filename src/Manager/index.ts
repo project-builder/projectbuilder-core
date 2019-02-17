@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as multer from 'multer';
 import * as index from './methods/index.js';
+import * as path from 'path';
 
 import Router from "./Router";
 import Validator from "./Validator";
@@ -17,6 +18,7 @@ class Manager{
     Router: any;
     Dispatcher: any;
     validator: any
+    path: any;
 
 
     constructor(project){
@@ -25,6 +27,7 @@ class Manager{
         this.fileSystemsMap = new Map();
         this.project = project;
         this.app = express();
+        this.path = path;
         // public app: any= express()
         this.multer = multer;
         this.Router = Router;
