@@ -1,38 +1,8 @@
 const setupORM = async function(){
-    console.log(this.project.databases)
   this.orm = {}
 
   for(let key in this.project.databases){
-
     this.orm[key] = this.ormTypes[this.project.databases[key].type].default
-
-
-// this.ormTypes[this.project.databases[key].type].default
-
-//     console.log('key is ', key)
-//     // console.log('key is ', key)
-//
-//
-//
-//     let dbType = ""
-//
-//       switch (this.project.databases[key].type) {
-//         case 'mysql': dbType = this.ormTypes.mysql.default
-//           break;
-//
-//         case 'mongo': dbType = this.ormTypes.mongo.default
-//           break;
-//         default:
-//       }
-//
-//     this.orm[key] = dbType;
-//
-//
-// console.log('+++++++++++++++++++')
-// console.log(this.orm)
-// console.log('+++++++++++++++++++')
-
-
   }
 }
 

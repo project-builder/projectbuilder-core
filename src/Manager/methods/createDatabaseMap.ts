@@ -1,4 +1,4 @@
-const createDatabaseMap = function(dbName, dbConfig){
+const createDatabaseMap = function(dbName, dbConfig) {
   let name = dbName;
   dbName = new Map();
 
@@ -8,8 +8,6 @@ const createDatabaseMap = function(dbName, dbConfig){
 
   this.databaseMap.set(name, dbName);
 
-
-  console.log(this.databaseMap)
 }
 
 export default createDatabaseMap

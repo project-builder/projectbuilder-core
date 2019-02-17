@@ -1,42 +1,50 @@
-const initialize = async function (port) {
-console.log('initialized with YAML file!')
+const initialize = async function(port: number) {
   await this.determineORM();
   await this.determineFS();
 
   this.setupORM();
   this.setupFS();
 
-    for (let key in this.project.models) {
-      this.createModelMap(key, this.project.models[key]);
-    }
-
-    for (let key in this.project.databases) {
-      this.createDatabaseMap(key, this.project.databases[key]);
-    }
-
-    for (let key in this.project.fileSystems) {
-      this.createFileSystemsMap(key, this.project.fileSystems[key]);
-    }
-
-    let listenPort = process.env.PORT || port
-
-
-
-    this.dispatcher = new this.Dispatcher(this.modelMap, this.databaseMap, this.fileSystemsMap, this.orm, this.fs, this.validator)
-
-    this.manage();
-
-    this.app.use(this.multer().any());
-     this.app.use(this.express.static("public/dist"));
-
-    // this.app.get('*', (req, res) => res.sendFile(this.path.join(__dirname, 'public' , 'dist' , 'index.html')))
-    // this.app.get('*', (req, res) => res.sendFile(this.path.join( '../../public/dist/index.html')))
-
-
-    this.app.listen(listenPort, () => {
-        console.log(`Listening on port ${listenPort}`);
-    })
-
+  for (let key in this.project.models) {
+    this.createModelMap(key, this.project.models[key]);
   }
 
-  export default initialize;
+  for (let key in this.project.databases) {
+    this.createDatabaseMap(key, this.project.databases[key]);
+  }
+
+  for (let key in this.project.fileSystems) {
+    this.createFileSystemsMap(key, this.project.fileSystems[key]);
+  }
+
+
+for (let key of this.modelMap) {
+  console.log(key);
+}
+
+
+
+  let listenPort = process.env.PORT || port
+
+  this.dispatcher = new this.Dispatcher(this.modelMap, this.databaseMap, this.fileSystemsMap, this.orm, this.fs, this.validator)
+
+  this.manage();
+
+  this.app.use(this.multer().any());
+  this.app.use(this.express.static("public/dist"));
+
+  this.app.listen(listenPort, () => {
+    console.log(`Listening on port ${listenPort}`);
+  })
+
+}
+
+export default initialize;
+
+  // if (currentModel.db) {
+  //   let configFile = this.databaseMap.get(currentModel.db).get('setup')
+  //   let orm = new this.orm[currentModel.db](configFile)
+  //   let myresp = await orm.getAll(model, searchCategory, searchValue)
+  //
+  //   return myresp
+  // }

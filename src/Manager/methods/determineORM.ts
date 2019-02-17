@@ -1,3 +1,7 @@
+/**
+A description for determineORM
+*/
+
 const determineORM = async function() {
   let ORMTypes = new Set();
 
@@ -9,16 +13,6 @@ const determineORM = async function() {
 
   for (let dbType of ORMTypes) {
     this.ormTypes[dbType] = await import(`@projectbuilder/projectbuilder-orm-${dbType}`)
-
-    // switch (dbType) {
-    //   case 'mysql': this.ormTypes.mysql = await import('@projectbuilder/projectbuilder-orm-mysql')
-    //     break;
-    //   case 'mongo': this.ormTypes.mongo = await import('projectbuilder-orm-mongo')
-    //     break;
-    //   case 'Firebase': this.ormTypes.firebase = await require('firebaseorm')
-    //     break;
-    //   default:
-    // }
   }
 
 

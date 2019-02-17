@@ -1,4 +1,3 @@
-// import multer from 'multer';
 import * as index from './methods/index.js'
 
 class Router{
@@ -15,18 +14,6 @@ class Router{
         this.apiPath = `/api/${name}/`;
         this.dispatcher = dispatcher
     }
-
-    // setup = () => {
-    //   //bodyParser Settings
-    //    this.api.use(multer().any());
-    //    this.api.use(express.static("public/dist"));
-    //
-    //    this.api.listen(this.port, () => {
-    //        console.log(`Listening on port ${this.port}`);
-    //    })
-
-
-    // }
 
 
     listen = index.listen
