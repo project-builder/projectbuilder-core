@@ -19,7 +19,22 @@ const initialize = async function(port: number) {
 
 
 for (let key of this.modelMap) {
-  console.log(key);
+  let currentModel = this.dispatcherHelper(key)
+
+  if (currentModel.db) {
+    let configFile = this.databaseMap.get(currentModel.db).get('setup')
+    let orm = new this.orm[currentModel.db](configFile)
+
+console.log('$$$$$$$$$$$$$$$$$$$$$$$');
+    console.log(orm);
+    console.log('$$$$$$$$$$$$$$$$$$$$$$$');
+
+    // let myresp = await orm.getAll(model, searchCategory, searchValue)
+
+    // return myresp
+  }
+
+
 }
 
 
