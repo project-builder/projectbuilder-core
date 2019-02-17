@@ -19,6 +19,10 @@ const initialize = async function(port: number) {
 
 
 for (let [key, value] of this.modelMap) {
+    console.log(value);
+    console.log('@@@@@@@@@@@@@@@@@@@@@@');
+
+
   let currentModelMap = this.modelMap.get(key)
   let currentModelDB = currentModelMap.get('db');
   let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
