@@ -19,10 +19,10 @@ const initialize = async function(port: number) {
 
 
 for (let key of this.modelMap) {
-  // let currentModelMap = this.modelMap.get(key)
-  let currentModelDB = key.get('db');
+  let currentModelMap = this.modelMap.get(key)
+  let currentModelDB = currentModelMap.get('db');
   let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
-  let currentModelData = key.get('data')
+  let currentModelData = currentModelMap.get('data')
   // let currentModel = this.dispatcherHelper(key)
 
   if (currentModelDB) {
