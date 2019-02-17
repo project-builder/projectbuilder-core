@@ -7,19 +7,20 @@ const determineFS = async function() {
 
   // console.log(FSTypes);
   this.fsTypes = {}
-
   for (let fsType of FSTypes) {
-    switch (fsType) {
-      case 'S3': this.fsTypes.s3 = await import('s3ORM')
-      // case 'S3': this.fsTypes.s3 = await require('s3ORM')
+    this.fsTypes[fsType] = await import(`@projectbuilder/projectbuilder-fs-${fsType}`)
+  // for (let fsType of FSTypes) {
+  //   switch (fsType) {
+  //     case 'S3': this.fsTypes.s3 = await import('s3ORM')
+  //     // case 'S3': this.fsTypes.s3 = await require('s3ORM')
 
         break;
       // case 'Mongo': this.fsTypes.mongo = await import('mongoorm')
       //   break;
       // case 'Firebase': this.fsTypes.firebase = await import('firebaseorm')
       //   break;
-      default:
-    }
+      // default:
+    // }
   }
 }
 

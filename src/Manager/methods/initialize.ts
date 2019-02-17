@@ -20,15 +20,17 @@ console.log('initialized with YAML file!')
 
     let listenPort = process.env.PORT || port
 
-    this.app.use(this.multer().any());
-     this.app.use(this.app.static("public/dist"));
-
-    this.app.get('*', (req, res) => res.sendFile(this.path.join(__dirname, 'public' , 'dist' , 'index.html')))
 
 
     this.dispatcher = new this.Dispatcher(this.modelMap, this.databaseMap, this.fileSystemsMap, this.orm, this.fs, this.validator)
 
     this.manage();
+
+    this.app.use(this.multer().any());
+     this.app.use(this.app.static("public/dist"));
+
+    this.app.get('*', (req, res) => res.sendFile(this.path.join(__dirname, 'public' , 'dist' , 'index.html')))
+
 
     this.app.listen(listenPort, () => {
         console.log(`Listening on port ${listenPort}`);
