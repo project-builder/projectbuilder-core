@@ -19,11 +19,15 @@ const initialize = async function(port: number) {
 
 
 for (let key of this.modelMap) {
-  let currentModel = this.dispatcherHelper(key)
+  let currentModelMap = this.modelMap.get(key)
+  let currentModelDB = currentModelMap.get('db');
+  let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
+  let currentModelData = currentModelMap.get('data')
+  // let currentModel = this.dispatcherHelper(key)
 
-  if (currentModel.db) {
-    let configFile = this.databaseMap.get(currentModel.db).get('setup')
-    let orm = new this.orm[currentModel.db](configFile)
+  if (currentModelDB) {
+    let configFile = this.databaseMap.get(currentModelDB).get('setup')
+    let orm = new this.orm[currentModelDB](configFile)
 
 console.log('$$$$$$$$$$$$$$$$$$$$$$$');
     console.log(orm);
@@ -33,6 +37,39 @@ console.log('$$$$$$$$$$$$$$$$$$$$$$$');
 
     // return myresp
   }
+
+  // let currentModelMap = this.modelMap.get(model)
+  // let currentModelDB = currentModelMap.get('db');
+  // let currentModelDBType = this.databaseMap.get(currentModelDB).get('type');
+  // let currentModelData = currentModelMap.get('data')
+
+
+  // let currentModel = {
+  //   // map: currentModelMap,
+  //   db: currentModelDB,
+  //   files: currentModelFiles,
+  //   data: currentModelData
+  //   // dbType: currentModelDBType
+  // }
+
+
+  return currentModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
