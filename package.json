@@ -1,6 +1,6 @@
 {
   "name": "@projectbuilder/projectbuilder-core",
-  "version": "1.0.30",
+  "version": "1.0.21",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
