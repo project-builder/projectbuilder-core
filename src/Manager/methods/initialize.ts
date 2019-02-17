@@ -27,7 +27,7 @@ console.log('initialized with YAML file!')
     this.manage();
 
     this.app.use(this.multer().any());
-     this.app.use(this.app.static("public/dist"));
+     this.app.use(this.express.static("public/dist"));
 
     this.app.get('*', (req, res) => res.sendFile(this.path.join(__dirname, 'public' , 'dist' , 'index.html')))
 

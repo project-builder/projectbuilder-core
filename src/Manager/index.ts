@@ -19,6 +19,7 @@ class Manager{
     Dispatcher: any;
     validator: any
     path: any;
+    express: any;
 
 
     constructor(project){
@@ -27,6 +28,7 @@ class Manager{
         this.fileSystemsMap = new Map();
         this.project = project;
         this.app = express();
+        this.express = express
         this.path = path;
         // public app: any= express()
         this.multer = multer;
