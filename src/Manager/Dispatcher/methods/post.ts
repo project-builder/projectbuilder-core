@@ -1,5 +1,8 @@
 const post = async function(model, data, files)  {
 
+      console.log('DISPPOST:', model, data, files)
+
+
   let [dataKey] = Object.keys(data)
 
   let currentModel = this.dispatcherHelper(model);

@@ -19,20 +19,6 @@ const initialize = async function(port: number) {
 
   await this.createTables()
 
-
-// for (let [key, value] of this.modelMap) {
-//   let currentModelMap = this.modelMap.get(key)
-//   let currentModelDB = currentModelMap.get('db');
-//
-//   if (currentModelDB) {
-//     let configFile = this.databaseMap.get(currentModelDB).get('setup')
-//     let orm = new this.orm[currentModelDB](configFile)
-//     await orm.create(key, this.project.models[key])
-//   }
-// }
-
-
-
   let listenPort = process.env.PORT || port
 
   this.dispatcher = new this.Dispatcher(this.modelMap, this.databaseMap, this.fileSystemsMap, this.orm, this.fs, this.validator)
@@ -49,11 +35,3 @@ const initialize = async function(port: number) {
 }
 
 export default initialize;
-
-  // if (currentModel.db) {
-  //   let configFile = this.databaseMap.get(currentModel.db).get('setup')
-  //   let orm = new this.orm[currentModel.db](configFile)
-  //   let myresp = await orm.getAll(model, searchCategory, searchValue)
-  //
-  //   return myresp
-  // }
