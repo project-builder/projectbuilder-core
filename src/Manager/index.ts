@@ -44,6 +44,7 @@ class Manager{
     createFileSystemsMap = index.createFileSystemsMap;
     determineFS = index.determineFS;
     setupFS = index.setupFS
+    createTables = index.createTables
 }
 
 export default Manager
