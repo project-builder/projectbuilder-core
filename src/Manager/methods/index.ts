@@ -7,6 +7,7 @@ import initialize from './initialize';
 import manage from './manage';
 import setupFS from './setupFS';
 import setupORM from './setupORM';
+import createTables from './createTables'
 
 export{
   initialize,
@@ -17,5 +18,6 @@ export{
   determineORM,
   createFileSystemsMap,
   determineFS,
-  setupFS
+  setupFS,
+  createTables
 }
