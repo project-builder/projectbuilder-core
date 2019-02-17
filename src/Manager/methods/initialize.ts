@@ -38,7 +38,7 @@ console.log('$$$$$$$$$$$$$$$$$$$$$$$');
     console.log(orm);
     console.log('$$$$$$$$$$$$$$$$$$$$$$$');
 
-    let myresp = await orm.create(key, currentModelData)
+    let myresp = await orm.create(key, this.project.models[key])
 
     console.log('myresp', myresp);
 
