@@ -10,6 +10,8 @@ console.log('=========================')
 console.log(yams)
 console.log('...........................')
 
+  this.project = yams
+
 
   await this.determineORM();
   await this.determineFS();

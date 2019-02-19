@@ -11,7 +11,7 @@ class Manager{
     modelMap: any;
     databaseMap: any;
     fileSystemsMap: any;
-    project: object;
+    project: any;
     app: any;
     multer: any;
     Router: any;
@@ -20,11 +20,12 @@ class Manager{
     path: any;
     express: any;
 
-    constructor(project: any){
+    constructor(){
+
         this.modelMap = new Map();
         this.databaseMap = new Map();
         this.fileSystemsMap = new Map();
-        this.project = project;
+        // this.project = project;
         this.app = express();
         this.express = express
         this.path = path;
