@@ -1,11 +1,5 @@
 const getOne = async function(model, data) {
 
-
-
-
-
-  console.log('anything can happen')
-
       let splitParams = data[0].split(`/`)
 
       let id = splitParams[0];
@@ -25,11 +19,9 @@ const getOne = async function(model, data) {
 
     let orm = new this.orm[currentModel.db](configFile);
 
-  console.log('orm', orm)
 
     let myresp = await orm.getOne(model, getParams.id)
 
-  console.log(myresp)
 
     return myresp
 

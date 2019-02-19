@@ -1,0 +1,24 @@
+---
+  databases:
+    thatDB:
+      type: "mongo"
+      setup:
+        port: "27017"
+        host: "localhost"
+        user: "root"
+        password: ""
+        database: "portfolio_db"
+  filesystems: {}
+  models:
+    dinos:
+      files: false
+      db: "thatDB"
+      data:
+        name:
+          dataType: "string"
+          required: "yes"
+          encrypted: "no"
+        size:
+          dataType: "string"
+          required: "yes"
+          encrypted: "no"

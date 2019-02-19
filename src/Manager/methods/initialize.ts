@@ -1,4 +1,7 @@
 const initialize = async function(port: number) {
+
+console.log(process.cwd())
+
   await this.determineORM();
   await this.determineFS();
 

@@ -1,4 +1,4 @@
-import * as index from './methods/index.js'
+import * as index from './methods/index'
 
 class Dispatcher{
   modelMap: any;

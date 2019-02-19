@@ -1,7 +1,5 @@
 const get = async function(model, searchQuery){
 
-  console.log(searchQuery)
-
 let searchCategory = [];
 let searchValue = [];
 
@@ -9,9 +7,6 @@ let searchValue = [];
       searchCategory.push(key);
       searchValue.push(`'${searchQuery[key]}'`)
   }
-
-  console.log('sc', searchCategory);
-  console.log('sv', searchValue);
 
   let currentModel = this.dispatcherHelper(model)
 

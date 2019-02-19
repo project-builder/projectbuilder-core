@@ -1,11 +1,6 @@
 const listen = async function() {
-
-
-
-
     this.api.get(this.apiPath, async (req, res) => {
 
-      console.log('rq', req.query)
       let result = await this.dispatcher.get(this.modelName, req.query);
       res.send(result)
     })
@@ -16,15 +11,11 @@ const listen = async function() {
     });
 
       this.api.get(`${this.apiPath}*`, async (req, res) => {
-        console.log('i hit the ranom route!', req.query)
-
         let result = await this.dispatcher.getSome(this.modelName, req.params, req.query);
         res.send(result)
       });
 
     this.api.post(this.apiPath, async (req, res) => {
-      console.log('POST:', req.body, req.files)
-
 
         let result = await this.dispatcher.post(this.modelName, req.body, req.files);
         res.status(result.code).send(result.message);

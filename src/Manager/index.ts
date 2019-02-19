@@ -1,8 +1,7 @@
 import * as express from 'express';
 import * as multer from 'multer';
-import * as index from './methods/index.js';
+import * as index from './methods/index';
 import * as path from 'path';
-
 import Router from "./Router";
 import Validator from "./Validator";
 import Dispatcher from "./Dispatcher"
@@ -12,7 +11,7 @@ class Manager{
     modelMap: any;
     databaseMap: any;
     fileSystemsMap: any;
-    project: any;
+    project: object;
     app: any;
     multer: any;
     Router: any;

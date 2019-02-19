@@ -11,7 +11,6 @@ const createModelMap = function(modelName, rules){
 
 
     for (const key in rules.data) {
-      // console.log('k',key);
       modelData.set(`${key}`, rules.data[key])
     }
 
@@ -19,7 +18,6 @@ const createModelMap = function(modelName, rules){
 
     this.modelMap.set(name, modelName);
 
-    // console.log(this.modelMap);
 }
 
 export default createModelMap
