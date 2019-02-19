@@ -1,6 +1,15 @@
+import * as YAML from 'yamljs'
+
 const initialize = async function(port: number) {
 
-console.log(process.cwd())
+let cDir = process.cwd()
+
+let yams = YAML.load(`${cDir}/prjbconfig.yml`)
+
+console.log('=========================')
+console.log(yams)
+console.log('...........................')
+
 
   await this.determineORM();
   await this.determineFS();
