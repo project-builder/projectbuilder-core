@@ -4,7 +4,7 @@
 projectbuilder-core is the heart and soul of the projectBuilder suite. This package will start your server, constructor your API, and make any necessary calls to databases and file storage systems. It also provides basic validation, and encryption (note: as of Feb 18, 2019, this feature is not yet implemented.).
 
 ##USAGE
-The prefered way to make use of projectbuilder-core is via the CLI package, projectbuilder-cli, which will generate a config file and install the core as well as additional plugin packages. If, however, you wish to manually setup your project, the instructions as below.
+The prefered way to make use of projectbuilder-core is via the CLI package, projectbuilder-cli, which will generate a config file and install the core as well as additional plugin packages. If, however, you wish to manually setup your project, the instructions are below.
 
 
 
@@ -50,14 +50,18 @@ This config file will have three sections: `databases`, `filesystems`, and `mode
         port: "3306"
         host: "localhost"
         user: "root"
-        password: "myPassword" #ideally keep this in an environment variable
-        database: "someDB"
-  filesystems: {}
+        password: "donttellanyone" #ideally keep this in an environment variable
+        database: "someDB" #This is the name of your actual database
+  filesystems:
+  	myFilesLiveHere: #a user frienldy name used to refer to the filestorage 
+      type: "s3" #what kind of database your connecting to
+      setup: #configuration for the fs of choice, this may differ between fs 
+        bucket: "my.files.s3.sample" 
   models:
-    clothes:
-      files: false
-      db: "production"
-      data:
+    clothes: #the name of your model
+      files: "myFilesLiveHere" #the friendly name of the filesystem this model is connected to
+      db: "myProjectDatabase"  #the friendly name of the db this model is connected to
+      data: 
         type:
           dataType: "string"
           required: true
@@ -72,13 +76,85 @@ This config file will have three sections: `databases`, `filesystems`, and `mode
           encrypted: "no"
 ```
 
+## .ENV Files
+
+projectBuilder can read from a .env in your projects root directory. It is recomended that your store sensitve information such as passwords in this file, and that you do not commit said file to any VCS.
+
+We'll save our mysql database password into and environment variable by including the following line in our `.env` file.
+
+```bash
+mySecretPassword = 'donttellanyone'
+```
+
+
+Now in our config file, we only need to change the password line. It would now look like this.
 
 
 
 
+```yaml
+---
+  databases: 
+    myProjectDatabase:
+      type: "mysql" 
+      setup:  
+        port: "3306"
+        host: "localhost"
+        user: "root"
+        password: process.env.mySecretPassword #our password is saved in the environment variable `mySecretpassword`
+        database: "someDB" 
+  filesystems:
+  	myFilesLiveHere:  
+      type: "s3" 
+      setup: 
+        bucket: "my.files.s3.sample" 
+  models:
+    clothes: #the name of your model
+      files: "myFilesLiveHere" 
+      db: "myProjectDatabase"  
+      data: 
+        type:
+          dataType: "string"
+          required: true
+          encrypted: "no"
+        size:
+          dataType: "string"
+          required: true
+          encrypted: "no"
+        color:
+          dataType: "string"
+          required: true
+          encrypted: "no"
+```
+
+projectBuilder will take care of the rest!.
+
+##public folder
+At the time of writing, project builder only works with single page bundled applications. It will look for them on `public/dist/`
 
 
 
+##index.js
+
+Finally we'll need an index.js file. (name this whatever you like, it's your start script)
+
+
+```javascript
+const {Manager} = require('@projectbuilder/projectbuilder-core');
+const myManager = new Manager();
+myManager.initialize(7600); #the number is the port your want to run your server on
+```
+
+
+##Recap
+
+• In order for projectBuilder to function properly, it needs a config file at the root directory titled `prjbconfig.yml`
+
+• You will need to install any orm or fs plugins manually
+
+• If you wish to hide your passwords, put them in a `.env` file at the projects root directory.
+
+• Currently, only bundled SPA are supported. This should live in `public/dist/`
 
 
 
