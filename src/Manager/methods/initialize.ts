@@ -65,6 +65,12 @@ console.log('got I')
     this.createFileSystemsMap(key, this.project.fileSystems[key]);
   }
 
+// console.log('*******************************')
+// console.log(this.databas)
+// console.log('*******************************')
+
+
+
   await this.createTables()
 
   let listenPort = process.env.PORT || port

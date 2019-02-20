@@ -5,6 +5,13 @@ const createTables = async function(){
 
     if (currentModelDB) {
       let configFile = this.databaseMap.get(currentModelDB).get('setup')
+
+    console.log('*******************************')
+console.log(configFile)
+console.log('*******************************')
+
+
+
       let orm = new this.orm[currentModelDB](configFile)
       await orm.create(key, this.project.models[key])
     }
