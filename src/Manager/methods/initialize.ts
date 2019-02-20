@@ -38,7 +38,7 @@ console.log('got H')
 
 
 console.log('=========================')
-console.log(yams)
+console.log(yams.databases)
 console.log('...........................')
 
   this.project = yams
