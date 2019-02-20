@@ -38,18 +38,24 @@ console.log('got H')
 
 
 console.log('=========================')
-console.log(yams.databases.setup)
+console.log(yams.databases)
 console.log('...........................')
 
 
-// if(yams.databases.setup.password === 'process.env.productionPASS'){
 var searchPattern = new RegExp('^' + 'process.env');
 
-if (searchPattern.test(yams.databases.setup.password)) {
-  console.log('need to convert')
-  yams.databases.setup.password = eval(yams.databases.setup.password);
+for (let key in yams.databases) {
+  if (searchPattern.test(yams.databases[key].setup.password)) {
+    console.log('need to convert')
+    yams.databases[key].setup.password = eval(yams.databases[key].setup.password);
 
+  }
 }
+
+
+// if(yams.databases.setup.password === 'process.env.productionPASS'){
+
+
 // }
 
   this.project = yams
