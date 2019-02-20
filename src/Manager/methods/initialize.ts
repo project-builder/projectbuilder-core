@@ -2,7 +2,18 @@ import * as YAML from 'yamljs'
 import * as dotenv from 'dotenv'
 
 
-dotenv.config();
+// dotenv.config();
+
+const result = dotenv.config()
+
+if (result.error) {
+  throw result.error
+}
+
+console.log(result.parsed)
+
+
+
 
 const initialize = async function(port: number) {
 
