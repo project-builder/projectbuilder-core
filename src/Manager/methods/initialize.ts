@@ -2,67 +2,23 @@ import * as YAML from 'yamljs'
 import * as dotenv from 'dotenv'
 
 
-// dotenv.config();
-console.log('got A')
-
-const result = dotenv.config()
-
-console.log('got B')
-
-
-if (result.error) {
-console.log('got C')
-
-  throw result.error
-}
-
-console.log('got D')
-
-console.log(result.parsed)
-console.log('got E')
-
-
-
-
+dotenv.config();
 
 const initialize = async function(port: number) {
-console.log('got F')
 
 
-let cDir = process.cwd()
-console.log('got G')
+this.project = YAML.load(`${process.cwd()}/prjbconfig.yml`)
 
 
-let yams = YAML.load(`${cDir}/prjbconfig.yml`)
-console.log('got H')
+let envPattern = new RegExp('^' + 'process.env');
 
-
-console.log('=========================')
-console.log(yams.databases)
-console.log('...........................')
-
-
-var searchPattern = new RegExp('^' + 'process.env');
-
-for (let key in yams.databases) {
-  if (searchPattern.test(yams.databases[key].setup.password)) {
-    console.log('need to convert')
-    yams.databases[key].setup.password = eval(yams.databases[key].setup.password);
+for (let key in this.project.databases) {
+  if (envPattern.test(this.project.databases[key].setup.password)) {
+    console.log('still converting')
+    this.project.databases[key].setup.password = eval(this.project.databases[key].setup.password);
 
   }
 }
-
-
-// if(yams.databases.setup.password === 'process.env.productionPASS'){
-
-
-// }
-
-  this.project = yams
-
-console.log('got I')
-
-
 
   await this.determineORM();
   await this.determineFS();
