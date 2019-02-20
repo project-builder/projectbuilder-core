@@ -1,4 +1,8 @@
 import * as YAML from 'yamljs'
+import * as dotenv from 'dotenv'
+
+
+dotenv.config();
 
 const initialize = async function(port: number) {
 
