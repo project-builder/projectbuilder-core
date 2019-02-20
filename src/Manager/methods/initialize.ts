@@ -2,15 +2,25 @@ import * as YAML from 'yamljs'
 import * as dotenv from 'dotenv'
 
 
-dotenv.config();
+// dotenv.config();
+console.log('got A')
 
-// const result = dotenv.config()
-//
-// if (result.error) {
-//   throw result.error
-// }
-//
-// console.log(result.parsed)
+const result = dotenv.config()
+
+console.log('got B')
+
+
+if (result.error) {
+console.log('got C')
+
+  throw result.error
+}
+
+console.log('got D')
+
+console.log(result.parsed)
+console.log('got E')
+
 
 
 
