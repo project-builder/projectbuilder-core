@@ -26,16 +26,25 @@ console.log('got E')
 
 
 const initialize = async function(port: number) {
+console.log('got F')
+
 
 let cDir = process.cwd()
+console.log('got G')
+
 
 let yams = YAML.load(`${cDir}/prjbconfig.yml`)
+console.log('got H')
+
 
 console.log('=========================')
 console.log(yams)
 console.log('...........................')
 
   this.project = yams
+
+console.log('got I')
+
 
 
   await this.determineORM();
