@@ -21,9 +21,13 @@ console.log(currentModel.data)
 //hash stuff here
 for(let [key, value] of currentModel.data){
   if(value.encrypted === 'yes'){
-  console.log(key, 'must encrypt')
-    let encData = 'FUZZY'
-    postData[key] = encData
+    let encryptor = new this.Encryptor();
+      let hash = encryptor.encrypt(postData[key])
+
+
+  // console.log(key, 'must encrypt')
+    // let encData = 'FUZZY'
+    postData[key] = hash;
     // let temp = postData[key];
     console.log('tmpencr', postData[key])
   }

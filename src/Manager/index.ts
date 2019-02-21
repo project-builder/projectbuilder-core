@@ -5,6 +5,7 @@ import * as path from 'path';
 import Router from "./Router";
 import Validator from "./Validator";
 import Dispatcher from "./Dispatcher"
+import Encryptor from "./Encryptor"
 
 
 class Manager{
@@ -19,6 +20,7 @@ class Manager{
     validator: any
     path: any;
     express: any;
+    Encryptor: any
 
     constructor(){
 
@@ -33,6 +35,7 @@ class Manager{
         this.Router = Router;
         this.Dispatcher = Dispatcher
         this.validator = Validator;
+        this.Encryptor = Encryptor;
     }
 
     initialize = index.initialize;
