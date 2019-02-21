@@ -35,7 +35,8 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "multer": "^1.4.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.6",
@@ -43,7 +44,6 @@
     "eslint": "^5.14.0",
     "jest": "^24.1.0",
     "ts-jest": "^23.10.5",
-    "typescript": "^3.3.3",
-    "yamljs": "^0.3.0"
+    "typescript": "^3.3.3"
   }
 }
