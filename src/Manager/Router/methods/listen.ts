@@ -1,6 +1,11 @@
 const listen = async function() {
-    this.api.get(this.apiPath, async (req, res) => {
+    this.api.get('/page/*', async (req, res) => {
+      // let result = await this.dispatcher.get(this.modelName, req.query);
+      res.render(`${process.cwd()}/public/dist/${req.params[1]}`)
+    })
 
+
+    this.api.get(this.apiPath, async (req, res) => {
       let result = await this.dispatcher.get(this.modelName, req.query);
       res.send(result)
     })

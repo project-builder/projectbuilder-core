@@ -38,11 +38,6 @@ for (let key in this.project.databases) {
     this.createFileSystemsMap(key, this.project.fileSystems[key]);
   }
 
-// console.log('*******************************')
-// console.log(this.databas)
-// console.log('*******************************')
-
-
 
   await this.createTables()
 
