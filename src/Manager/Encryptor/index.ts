@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 
 class Encryptor{
   // bcrypt: any;
@@ -12,6 +12,12 @@ class Encryptor{
 
 
   static async encrypt(plainPass, bc = bcrypt){
+    console.log('******************');
+    console.log(bc);
+
+    console.log('******************');
+
+
     let hash = await bc.hash(plainPass, 5);
     return hash
   }
