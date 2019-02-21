@@ -7,7 +7,6 @@ import Validator from "./Validator";
 import Dispatcher from "./Dispatcher"
 import Encryptor from "./Encryptor"
 
-
 class Manager{
     modelMap: any;
     databaseMap: any;
