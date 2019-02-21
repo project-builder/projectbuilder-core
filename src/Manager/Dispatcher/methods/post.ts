@@ -15,12 +15,13 @@ const post = async function(model, data, files)  {
   }
 
 
-
+console.log(postData)
 console.log(currentModel.data)
 
 //hash stuff here
-for(let key in currentModel.data){
-  if(currentModel.data[key].encrypted === 'yes'){
+for(let [key, value] of currentModel.data){
+  if(value.encrypted === 'yes'){
+  console.log(key, 'must encrypt')
     let temp = postData[key];
     console.log('tmpencr', temp)
   }
