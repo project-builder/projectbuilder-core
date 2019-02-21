@@ -1,4 +1,5 @@
 import * as index from './methods/index'
+import Encryptor from '../Encryptor'
 
 class Dispatcher{
   modelMap: any;
@@ -7,6 +8,7 @@ class Dispatcher{
   orm: any;
   fs: any;
   validator: any
+Encryptor: any
 
     constructor(modelMap, databaseMap, fileSystemsMap, orm, fs, validator ){
         this.modelMap = modelMap;
@@ -15,6 +17,7 @@ class Dispatcher{
         this.orm = orm;
         this.fs = fs;
         this.validator = validator
+      this.Encryptor = Encryptor
     }
 
     // dispatcher = index.dispatcher
