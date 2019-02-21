@@ -2,17 +2,18 @@ import bcrypt from 'bcrypt';
 
 // const saltRounds = 10;
 
-class Encryptor implements bcrypt{
+class Encryptor{
   // bcrypt: any;
+    static bcrypt: any;
   // static bcrypt: any;
 
-  // constructor(){
+  constructor(){
   // this.bcrypt = bcrypt
-  // }
+  }
 
 
   static async encrypt(plainPass){
-    let hash = await bcrypt.hash(plainPass, 5);
+    let hash = await this.bcrypt.hash(plainPass, 5);
     return hash
   }
 
