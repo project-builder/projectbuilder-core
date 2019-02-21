@@ -1,7 +1,7 @@
 const listen = async function() {
     this.api.get('/*', async (req, res) => {
       // let result = await this.dispatcher.get(this.modelName, req.query);
-      res.sendFile(`${process.cwd()}/public/dist/${req.params[0]}`)
+      res.sendFile(`${process.cwd()}/public/dist/${req.params[0]}.html`)
     })
 
 
