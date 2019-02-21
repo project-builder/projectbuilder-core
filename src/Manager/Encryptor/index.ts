@@ -13,7 +13,7 @@ class Encryptor{
 
   static async encrypt(plainPass, bc = bcrypt){
     console.log('******************');
-    console.log(bc);
+    console.log(bcrypt);
 
     console.log('******************');
 
