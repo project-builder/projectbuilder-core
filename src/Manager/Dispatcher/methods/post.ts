@@ -16,6 +16,8 @@ const post = async function(model, data, files)  {
 
 
 
+console.log(currentModel.data)
+
 //hash stuff here
 for(let key in currentModel.data){
   if(currentModel.data[key].encrypted === 'yes'){
