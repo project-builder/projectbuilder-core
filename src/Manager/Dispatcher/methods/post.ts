@@ -22,8 +22,10 @@ console.log(currentModel.data)
 for(let [key, value] of currentModel.data){
   if(value.encrypted === 'yes'){
   console.log(key, 'must encrypt')
-    let temp = postData[key];
-    console.log('tmpencr', temp)
+    let encData = 'FUZZY'
+    postData[key] = encData
+    // let temp = postData[key];
+    console.log('tmpencr', postData[key])
   }
 }
 
