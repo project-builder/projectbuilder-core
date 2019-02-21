@@ -1,6 +1,4 @@
 const post = async function(model, data, files)  {
-
-
   let [dataKey] = Object.keys(data)
 
   let currentModel = this.dispatcherHelper(model);
@@ -15,6 +13,19 @@ const post = async function(model, data, files)  {
   if(validateResponse != true ){
     return validateResponse
   }
+
+
+
+//hash stuff here
+for(let key in currentModel.data){
+  if(currentModel.data[key].encrypted === 'yes'){
+    let temp = postData[key];
+    console.log('tmpencr', temp)
+  }
+}
+
+
+
 
   if(currentModel.db){
     configFileDB = this.databaseMap.get(currentModel.db).get('setup')

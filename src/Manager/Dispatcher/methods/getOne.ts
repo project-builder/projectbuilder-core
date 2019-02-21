@@ -9,9 +9,6 @@ const getOne = async function(model, data) {
 
       let getParams = {id: id, getData:splitParams}
 
-
-
-
   let currentModel = this.dispatcherHelper(model);
 
   if (currentModel.db) {
