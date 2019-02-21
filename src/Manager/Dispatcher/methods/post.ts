@@ -17,11 +17,11 @@ const post = async function(model, data, files)  {
 
 console.log(postData)
 console.log(currentModel.data)
+console.log(this.Encryptor)
 
 //hash stuff here
 for(let [key, value] of currentModel.data){
   if(value.encrypted === 'yes'){
-    // let encryptor = new this.Encryptor();
       let hash = this.Encryptor.encrypt(postData[key])
 
 
