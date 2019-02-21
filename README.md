@@ -1,16 +1,16 @@
-#projectbuilder-core
+# projectbuilder-core
 
 
 projectbuilder-core is the heart and soul of the projectBuilder suite. This package will start your server, constructor your API, and make any necessary calls to databases and file storage systems. It also provides basic validation, and encryption (note: as of Feb 18, 2019, this feature is not yet implemented.).
 
-##USAGE
+## USAGE
 The prefered way to make use of projectbuilder-core is via the CLI package, projectbuilder-cli, which will generate a config file and install the core as well as additional plugin packages. If, however, you wish to manually setup your project, the instructions are below.
 
 
 
 
 
-##INSTALATION
+## INSTALATION
 
 ``` bash
 $ npm i @projectbuilder/projectbuilder-core
@@ -34,7 +34,7 @@ npm i @projectbuilder/projectbuilder-fs-FILESYSTEM
 Be sure to check that a package exists for the database and file storage system you are using.
 
 
-##CONFIG FILE
+## CONFIG FILE
 
 projectbuilder-core will look for a YAML file in your projects root folder called `prjbconfig.yml`
 
@@ -129,12 +129,12 @@ Now in our config file, we only need to change the password line. It would now l
 
 projectBuilder will take care of the rest!.
 
-##public folder
+## public folder
 At the time of writing, project builder only works with single page bundled applications. It will look for them on `public/dist/`
 
 
 
-##index.js
+## index.js
 
 Finally we'll need an index.js file. (name this whatever you like, it's your start script)
 
@@ -146,7 +146,7 @@ myManager.initialize(7600); #the number is the port your want to run your server
 ```
 
 
-##Recap
+## Recap
 
 • In order for projectBuilder to function properly, it needs a config file at the root directory titled `prjbconfig.yml`
 
