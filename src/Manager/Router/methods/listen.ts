@@ -41,7 +41,7 @@ const listen = async function() {
 
 const myMiddle = (req, res, next) => {
   console.log('i am a middle')
-  let auth = true;
+  let auth = false;
   if(auth){
     next()
   }
