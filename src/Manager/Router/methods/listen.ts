@@ -41,7 +41,11 @@ const listen = async function() {
 
 const myMiddle = (req, res, next) => {
   console.log('i am a middle')
-  let auth = false;
+  console.log(process.env.projectBuilderKEY)
+  console.log(req.params.api_key)
+
+  let auth = req.params.api_key === process.env.projectBuilderKEY
+
   if(auth){
     next()
   }
