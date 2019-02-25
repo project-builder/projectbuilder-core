@@ -41,7 +41,13 @@ const listen = async function() {
 
 const myMiddle = (req, res, next) => {
   console.log('i am a middle')
-  next()
+  let auth = true;
+  if(auth){
+    next()
+  }
+  else{
+    res.json({message: 'not authorized for that!'})
+  }
 }
 
 export default listen
