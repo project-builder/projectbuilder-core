@@ -1,10 +1,11 @@
 const listen = async function() {
-    this.api.get('/*', async (req, res) => {
-      res.sendFile(`${process.cwd()}/public/dist/${req.params[0]}.html`)
-    })
+    // this.api.get('/*', async (req, res) => {
+    //   res.sendFile(`${process.cwd()}/public/dist/${req.params[0]}.html`)
+    // })
 
 
-    this.api.get(this.apiPath, async (req, res) => {
+
+    this.api.get(this.apiPath, myMiddle, async (req, res) => {
       let result = await this.dispatcher.get(this.modelName, req.query);
       res.send(result)
     })
@@ -36,6 +37,11 @@ const listen = async function() {
       let result = await this.dispatcher.deleteOne(this.modelName, req.params.id);
       res.send(result)
     } )
+}
+
+const myMiddle = (req, res, next) => {
+  console.log('i am a middle')
+  next()
 }
 
 export default listen

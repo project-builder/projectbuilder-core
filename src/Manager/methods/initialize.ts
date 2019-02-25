@@ -1,6 +1,7 @@
 import * as YAML from 'yamljs'
 import * as dotenv from 'dotenv'
 
+console.log('using PBC')
 
 dotenv.config();
 
