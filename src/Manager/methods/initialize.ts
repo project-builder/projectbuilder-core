@@ -27,6 +27,11 @@ for (let key in this.project.databases) {
   this.setupORM();
   this.setupFS();
 
+console.log('*******************')
+console.log(this.project)
+console.log('*******************')
+
+
   for (let key in this.project.models) {
     this.createModelMap(key, this.project.models[key]);
   }
