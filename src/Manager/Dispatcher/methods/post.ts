@@ -14,10 +14,16 @@ const post = async function(model, data, files)  {
     return validateResponse
   }
 
+console.log('======================')
+console.log(this.databaseMap)
+console.log(currentModel.db)
 
-console.log(postData)
-console.log(currentModel.data)
-console.log(this.Encryptor)
+console.log('======================')
+
+
+// console.log(postData)
+// console.log(currentModel.data)
+// console.log(this.Encryptor)
 
 //hash stuff here
 for(let [key, value] of currentModel.data){
