@@ -6,6 +6,10 @@ const determineFS = async function() {
   }
 
   this.fsTypes = {}
+  console.log(this.fsTypes)
+  console.log(FSTypes)
+
+
   for (let fsType of FSTypes) {
     this.fsTypes[fsType] = await import(`@projectbuilder/projectbuilder-fs-${fsType}`)
   }
