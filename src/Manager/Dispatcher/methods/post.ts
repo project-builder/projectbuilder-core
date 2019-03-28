@@ -60,6 +60,9 @@ console.log(this.fs)
 
 
 console.log(this.fs[currentModel.files])
+
+
+console.log(configFileFS)
 console.log('%%%%%%%%%%%%%%%%%%%%%%%%%')
 
     fs = new this.fs[currentModel.files](configFileFS);
