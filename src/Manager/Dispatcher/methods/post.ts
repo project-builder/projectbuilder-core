@@ -54,6 +54,11 @@ for(let [key, value] of currentModel.data){
 
   if(currentModel.files && files.length > 0){
     configFileFS = this.fileSystemsMap.get(currentModel.files).get('setup')
+
+console.log('%%%%%%%%%%%%%%%%%%%%%%%%%')
+console.log(this.fs[currentModel.files])
+console.log('%%%%%%%%%%%%%%%%%%%%%%%%%')
+
     fs = new this.fs[currentModel.files](configFileFS);
     let updateFiles = await fs.addFile(id, model, files)
     let confirmFiles = await orm.updateOne(model, id, {files:updateFiles})
