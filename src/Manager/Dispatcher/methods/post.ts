@@ -56,6 +56,9 @@ for(let [key, value] of currentModel.data){
     configFileFS = this.fileSystemsMap.get(currentModel.files).get('setup')
 
 console.log('%%%%%%%%%%%%%%%%%%%%%%%%%')
+console.log(this.fs)
+
+
 console.log(this.fs[currentModel.files])
 console.log('%%%%%%%%%%%%%%%%%%%%%%%%%')
 
