@@ -3,35 +3,21 @@ import * as dotenv from 'dotenv'
 
 dotenv.config();
 
-console.log('hit A')
-
 const initialize = async function(port: number) {
-console.log('hit A.1')
-
 
 this.project = YAML.load(`${process.cwd()}/prjbconfig.yml`)
 
-console.log('hit A.2')
-
-
-
 let envPattern = new RegExp('^' + 'process.env');
-
-console.log('hit A.3')
 
 
 for (let key in this.project.databases) {
-console.log('hit A.4')
 
   if (envPattern.test(this.project.databases[key].setup.password)) {
-  console.log('hit B')
-
     this.project.databases[key].setup.password = eval(this.project.databases[key].setup.password);
   }
 }
 
   await this.determineORM();
-console.log('hit C')
 
   await this.determineFS();
 
@@ -49,6 +35,11 @@ console.log('hit C')
   for (let key in this.project.fileSystems) {
     this.createFileSystemsMap(key, this.project.fileSystems[key]);
   }
+
+console.log('********************')
+console.log(this.project.models)
+console.log('********************')
+
 
   await this.createTables()
 
