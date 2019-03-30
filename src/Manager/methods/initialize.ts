@@ -17,7 +17,6 @@ for (let key in this.project.databases) {
   if (envPattern.test(this.project.databases[key].setup.password)) {
     console.log('still converting')
     this.project.databases[key].setup.password = eval(this.project.databases[key].setup.password);
-
   }
 }
 
@@ -50,6 +49,12 @@ console.log('*******************')
   let listenPort = process.env.PORT || port
 
   this.dispatcher = new this.Dispatcher(this.modelMap, this.databaseMap, this.fileSystemsMap, this.orm, this.fs, this.validator)
+
+this.app.use((req, res, next) =>{
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
   this.app.use(this.multer().any());
   this.app.use(this.express.static("public/dist"));
