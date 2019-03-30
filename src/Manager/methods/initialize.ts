@@ -6,14 +6,25 @@ dotenv.config();
 console.log('hit A')
 
 const initialize = async function(port: number) {
+console.log('hit A.1')
+
 
 this.project = YAML.load(`${process.cwd()}/prjbconfig.yml`)
 
+console.log('hit A.2')
+
+
+
 let envPattern = new RegExp('^' + 'process.env');
 
+console.log('hit A.3')
+
+
 for (let key in this.project.databases) {
+console.log('hit A.4')
+
   if (envPattern.test(this.project.databases[key].setup.password)) {
-console.log('hit B')
+  console.log('hit B')
 
     this.project.databases[key].setup.password = eval(this.project.databases[key].setup.password);
   }
