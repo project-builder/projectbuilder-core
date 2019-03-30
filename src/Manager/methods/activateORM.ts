@@ -1,5 +1,6 @@
 const activateORM = async function(){
 
+  this.project.dbORM ={}
 
   // for (let [key, value] of this.modelMap) {
   //   let currentModelMap = this.modelMap.get(key)
@@ -12,7 +13,7 @@ const activateORM = async function(){
   //     await orm.create(key, this.project.models[key])
   //   }
   // }
-
+  console.log(this.orm)
 
 //   this.orm = {}
 //
