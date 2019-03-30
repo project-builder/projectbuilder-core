@@ -22,7 +22,6 @@ class Manager{
     Encryptor: any
 
     constructor(){
-
         this.modelMap = new Map();
         this.databaseMap = new Map();
         this.fileSystemsMap = new Map();
