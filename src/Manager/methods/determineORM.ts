@@ -15,7 +15,6 @@ const determineORM = async function() {
     this.ormTypes[dbType] = await import(`@projectbuilder/projectbuilder-orm-${dbType}`)
   }
 
-
 }
 
 export default determineORM

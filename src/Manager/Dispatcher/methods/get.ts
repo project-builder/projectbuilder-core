@@ -1,7 +1,7 @@
 const get = async function(model, searchQuery){
 
-let searchCategory = [];
-let searchValue = [];
+  let searchCategory = [];
+  let searchValue = [];
 
   for (let key in searchQuery) {
       searchCategory.push(key);

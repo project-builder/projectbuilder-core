@@ -1,8 +1,6 @@
 import * as YAML from 'yamljs'
 import * as dotenv from 'dotenv'
 
-console.log('using PBC')
-
 dotenv.config();
 
 const initialize = async function(port: number) {
@@ -15,7 +13,6 @@ let envPattern = new RegExp('^' + 'process.env');
 
 for (let key in this.project.databases) {
   if (envPattern.test(this.project.databases[key].setup.password)) {
-    console.log('still converting')
     this.project.databases[key].setup.password = eval(this.project.databases[key].setup.password);
   }
 }
@@ -25,10 +22,6 @@ for (let key in this.project.databases) {
 
   this.setupORM();
   this.setupFS();
-
-console.log('*******************')
-console.log(this.project)
-console.log('*******************')
 
 
   for (let key in this.project.models) {
