@@ -36,13 +36,14 @@ for (let key in this.project.databases) {
     this.createFileSystemsMap(key, this.project.fileSystems[key]);
   }
 
+await this.activateORM();
+
 console.log('********************')
 console.log(this.project.models)
 console.log('---------------------')
 console.log(this.project.databases)
 console.log('---------------------')
 console.log(this.project.fileSystems)
-
 console.log('********************')
 
 

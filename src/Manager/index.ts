@@ -46,6 +46,7 @@ class Manager{
     determineFS = index.determineFS;
     setupFS = index.setupFS
     createTables = index.createTables
+    activateORM = index.activateORM;
 }
 
 export default Manager

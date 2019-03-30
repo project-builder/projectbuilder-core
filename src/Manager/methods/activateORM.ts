@@ -1,5 +1,6 @@
 const activateORM = async function(){
 
+
   // for (let [key, value] of this.modelMap) {
   //   let currentModelMap = this.modelMap.get(key)
   //   let currentModelDB = currentModelMap.get('db');
@@ -15,9 +16,10 @@ const activateORM = async function(){
 
 //   this.orm = {}
 //
-//   for(let key in this.project.databases){
-//     this.orm[key] = this.ormTypes[this.project.databases[key].type].default
-//   }
+  for(let key in this.project.databases){
+      console.log(key)
+    // this.orm[key] = this.ormTypes[this.project.databases[key].type].default
+  }
 
 
 
