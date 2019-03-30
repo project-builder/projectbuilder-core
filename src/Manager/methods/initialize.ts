@@ -38,6 +38,11 @@ for (let key in this.project.databases) {
 
 console.log('********************')
 console.log(this.project.models)
+console.log('---------------------')
+console.log(this.project.databases)
+console.log('---------------------')
+console.log(this.project.fileSystems)
+
 console.log('********************')
 
 
