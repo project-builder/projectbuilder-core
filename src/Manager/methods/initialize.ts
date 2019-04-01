@@ -11,7 +11,6 @@ let envPattern = new RegExp('^' + 'process.env');
 
 
 for (let key in this.project.databases) {
-
   if (envPattern.test(this.project.databases[key].setup.password)) {
     this.project.databases[key].setup.password = eval(this.project.databases[key].setup.password);
   }

@@ -13,12 +13,12 @@ const activateORM = async function(){
   //     await orm.create(key, this.project.models[key])
   //   }
   // }
-  console.log(this.orm)
+  console.log('theORM', this.orm)
 
 //   this.orm = {}
 //
   for(let key in this.project.databases){
-      console.log(key)
+      console.log('dbkey', key)
     // this.orm[key] = this.ormTypes[this.project.databases[key].type].default
   }
 
