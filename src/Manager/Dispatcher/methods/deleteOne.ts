@@ -1,6 +1,7 @@
 const deleteOne = async function(model, id){
     let currentModel = this.dispatcherHelper(model);
-    let configFileDB, orm, configFileFS, fs, fileList
+
+    let configFileDB: Object, orm, configFileFS, fs, fileList
 
     if(currentModel.db){
       configFileDB = this.databaseMap.get(currentModel.db).get('setup')

@@ -14,17 +14,6 @@ const post = async function(model, data, files)  {
     return validateResponse
   }
 
-console.log('======================')
-console.log(this.databaseMap)
-console.log(currentModel.db)
-
-console.log('!!!!!!!!!!!!!!!!!!!!!!!!!')
-console.log(this.fileSystemsMap)
-console.log(currentModel.files)
-console.log('======================')
-
-
-
 // console.log(postData)
 // console.log(currentModel.data)
 // console.log(this.Encryptor)
@@ -33,12 +22,7 @@ console.log('======================')
 for(let [key, value] of currentModel.data){
   if(value.encrypted === 'yes'){
       let hash = await this.Encryptor.encrypt(postData[key])
-
-
-  // console.log(key, 'must encrypt')
-    // let encData = 'FUZZY'
     postData[key] = hash;
-    // let temp = postData[key];
     console.log('tmpencr', postData[key])
   }
 }
@@ -54,10 +38,6 @@ for(let [key, value] of currentModel.data){
 
   if(currentModel.files && files.length > 0){
     configFileFS = this.fileSystemsMap.get(currentModel.files).get('setup')
-
-console.log('%%%%%%%%%%%%%%%%%%%%%%%%%')
-console.log(this.fs)
-
 
 console.log(this.fs[currentModel.files])
 

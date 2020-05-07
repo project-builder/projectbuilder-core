@@ -1,11 +1,12 @@
-const dispatcherHelper = function(model){
-  let currentModelMap = this.modelMap.get(model)
+const dispatcherHelper = function(model: string){
+
+  let currentModelMap: Map<any,any> = this.modelMap.get(model)
   let currentModelDB = currentModelMap.get('db');
   let currentModelFiles = currentModelMap.get('files');
   let currentModelData = currentModelMap.get('data')
 
 
-  let currentModel = {
+  let currentModel: Object = {
     db: currentModelDB,
     files: currentModelFiles,
     data: currentModelData

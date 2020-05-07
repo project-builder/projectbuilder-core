@@ -1,7 +1,6 @@
 import * as express from 'express';
 import * as multer from 'multer';
 import * as index from './methods/index';
-import * as path from 'path';
 import Router from "./Router";
 import Validator from "./Validator";
 import Dispatcher from "./Dispatcher"
@@ -17,7 +16,6 @@ class Manager{
     Router: any;
     Dispatcher: any;
     validator: any
-    path: any;
     express: any;
     Encryptor: any
 
@@ -25,10 +23,8 @@ class Manager{
         this.modelMap = new Map();
         this.databaseMap = new Map();
         this.fileSystemsMap = new Map();
-        // this.project = project;
         this.app = express();
         this.express = express
-        this.path = path;
         this.multer = multer;
         this.Router = Router;
         this.Dispatcher = Dispatcher
@@ -46,7 +42,6 @@ class Manager{
     determineFS = index.determineFS;
     setupFS = index.setupFS
     createTables = index.createTables
-    activateORM = index.activateORM;
 }
 
 export default Manager

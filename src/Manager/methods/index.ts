@@ -1,4 +1,3 @@
-import activateORM from './activateORM';
 import createDatabaseMap from './createDatabaseMap';
 import createFileSystemsMap from './createFileSystemsMap';
 import createModelMap from './createModelMap';
@@ -21,5 +20,4 @@ export{
   determineFS,
   setupFS,
   createTables,
-  activateORM
 }

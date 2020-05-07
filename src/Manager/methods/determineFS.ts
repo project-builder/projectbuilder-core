@@ -1,14 +1,15 @@
+/**
+Installs the necessary fs plugin based on the  prjbconfig.yml file
+*/
+
 const determineFS = async function() {
-  let FSTypes = new Set();
+  let FSTypes:Set<any> = new Set();
 
   for(let key in this.project.fileSystems){
     FSTypes.add(this.project.fileSystems[key].type)
   }
 
   this.fsTypes = {}
-  console.log(this.fsTypes)
-  console.log(FSTypes)
-
 
   for (let fsType of FSTypes) {
     this.fsTypes[fsType] = await import(`@projectbuilder/projectbuilder-fs-${fsType}`)

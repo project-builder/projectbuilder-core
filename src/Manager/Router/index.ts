@@ -2,12 +2,12 @@ import * as index from './methods/index'
 
 class Router{
   api: any;
-  modelName: any;
-  modelMap: any;
-  apiPath: any;
+  modelName: string;
+  modelMap: Map<string, string>;
+  apiPath: string;
   dispatcher: any;
 
-    constructor(name, express, dispatcher, modelMap){
+    constructor(name:string, express, dispatcher, modelMap){
         this.api = express;
         this.modelName = name;
         this.modelMap = modelMap

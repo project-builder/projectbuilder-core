@@ -1,9 +1,9 @@
 /**
-A description for determineORM
+Installs the necessary orm plugin based on the  prjbconfig.yml file
 */
 
 const determineORM = async function() {
-  let ORMTypes = new Set();
+  let ORMTypes:Set<any> = new Set();
 
   for(let key in this.project.databases){
     ORMTypes.add(this.project.databases[key].type)

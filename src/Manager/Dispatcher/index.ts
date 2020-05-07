@@ -8,7 +8,7 @@ class Dispatcher{
   orm: any;
   fs: any;
   validator: any
-Encryptor: any
+  Encryptor: any
 
     constructor(modelMap, databaseMap, fileSystemsMap, orm, fs, validator ){
         this.modelMap = modelMap;
@@ -20,7 +20,6 @@ Encryptor: any
       this.Encryptor = Encryptor
     }
 
-    // dispatcher = index.dispatcher
     dispatcherHelper = index.dispatcherHelper
     get = index.get
     getOne = index.getOne
@@ -28,7 +27,6 @@ Encryptor: any
     put = index.put
     deleteOne = index.deleteOne
     getSome = index.getSome
-
 
 }
 
